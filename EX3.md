@@ -69,38 +69,53 @@ INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
 
 
 ### QUERY:
-
+```sql
+ create view details as select ename from emp where sal>(select sal from emp where empno=7566);
+```
 
 ### OUTPUT:
+![Screenshot 2023-10-01 220754](https://github.com/dineshgl/EX-3-SubQueries-Views-and-Joins/assets/121243595/d83b0526-c0fb-4a61-8f4d-c0f4f3c23750)
+
 
 ### Q2) List the ename,job,sal of the employee who get minimum salary in the company.
 
 ### QUERY:
-
-
+```sql
+ create view details as select ename from emp where sal>(select sal from emp where empno=7566);
+```
 ### OUTPUT:
+![image](https://github.com/dineshgl/EX-3-SubQueries-Views-and-Joins/assets/121243595/9f955b42-2e8c-4b0a-9e19-c05c379c0eac)
+
 
 ### Q3) List ename, job of the employees who work in deptno 10 and his/her job is any one of the job in the department ‘SALES’.
 
 ### QUERY:
-
+```sql
+select ename,job from emp where deptno=10 and job='salesman';
+```
 
 ### OUTPUT:
-
+![image](https://github.com/dineshgl/EX-3-SubQueries-Views-and-Joins/assets/121243595/aeb9339d-b6d3-42ba-bc7b-7f0fcc69ca84)
 
 ### Q4) Create a view empv5 (for the table emp) that contains empno, ename, job of the employees who work in dept 10.
 
 ### QUERY:
-
+```sql
+ create view empv5 as select empno,ename,job from emp where deptno=10;
+```
 
 ### OUTPUT:
+![image](https://github.com/dineshgl/EX-3-SubQueries-Views-and-Joins/assets/121243595/be16edf2-db5d-4ea3-8093-792f6ae13b08)
 
 ### Q5) Create a view with column aliases empv30 that contains empno, ename, sal of the employees who work in dept 30. Also display the contents of the view.
 
 ### QUERY:
-
+```sql
+create view empv30 as select empno,ename,sal from emp where deptno=30;
+```
 
 ### OUTPUT:
+![image](https://github.com/dineshgl/EX-3-SubQueries-Views-and-Joins/assets/121243595/e753106e-2b93-4552-b45a-220efb7a38cd)
 
 ### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
 
@@ -140,15 +155,18 @@ INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson
 ### Q7) Write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
 
 ### QUERY:
-
-
+```sql
+select salesman1.name as "salesman" , customer1.cust_name as "customer name", salesman1.city as "city" from salesman1 inner join customer1 on salesman1.city=customer1.city;
+```
 ### OUTPUT:
+![image](https://github.com/dineshgl/EX-3-SubQueries-Views-and-Joins/assets/121243595/82ec09e3-abbc-4a6b-b98c-f4545a8a68d9)
 
 ### Q8) Write a SQL query to find salespeople who received commissions of more than 13 percent from the company. Return Customer Name, customer city, Salesman, commission.
 
-
 ### QUERY:
+```sql
 
+```
 
 ### OUTPUT:
 
